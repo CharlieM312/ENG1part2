@@ -17,7 +17,6 @@ public class FontManager {
      */
     @Getter
     private static final FontManager instance = new FontManager();
-
     /**
      * The BitmapFont object that can be used to draw text in the game
      */
@@ -34,7 +33,7 @@ public class FontManager {
         // The FreeTypeFontParameter object is used to set the parameters for the BitmapFont object
         FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
         // Set the font size
-        parameter.size = 12;
+        parameter.size = 40;
         // Generate the BitmapFont object
         font = generator.generateFont(parameter);
         // Dispose the FreeTypeFontGenerator object as it is no longer needed

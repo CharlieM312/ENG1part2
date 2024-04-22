@@ -15,7 +15,6 @@ import uk.ac.york.student.screens.Screens;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
 
 /**
  * This is the main game class for the application. It extends the {@link Game} class from the libGDX library.

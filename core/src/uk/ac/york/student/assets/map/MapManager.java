@@ -11,7 +11,6 @@ import uk.ac.york.student.utils.MapOfSuppliers;
 
 import java.io.File;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * This utility class manages the loading and storage of TiledMap objects.
