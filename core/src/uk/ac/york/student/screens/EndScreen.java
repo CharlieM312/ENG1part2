@@ -39,7 +39,8 @@ public class EndScreen extends BaseScreen {
         String scoreString = String.valueOf(score);
         batch.begin();
         font.draw(processor.getBatch(), "Your score is " + scoreString, 500, 400);
-        font.draw(processor.getBatch(), "Press Enter to exit", 500, 300);
+        font.draw(processor.getBatch(), "Press Enter to return to the main menu", 500, 300);
+        font.draw(processor.getBatch(), "Press Escape to exit the game", 500, 200);
         batch.end();
         System.out.println(score);
         String myscoreString = player.convertScoreToString(score);
@@ -49,8 +50,10 @@ public class EndScreen extends BaseScreen {
             @Override
             public boolean keyDown(int keycode) {
                 if (keycode == Input.Keys.ENTER) {
-                    Gdx.app.exit();
-                }
+                    game.setScreen(Screens.MAIN_MENU, true);
+                } else if (keycode == Input.Keys.ESCAPE) {
+                        Gdx.app.exit();
+                    }
                 return true;
             }
         });
