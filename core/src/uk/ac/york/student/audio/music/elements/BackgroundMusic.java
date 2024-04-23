@@ -1,6 +1,4 @@
 package uk.ac.york.student.audio.music.elements;
-
-import com.badlogic.gdx.audio.Music;
 import lombok.Getter;
 import uk.ac.york.student.audio.music.GameMusic;
 
@@ -9,7 +7,7 @@ import uk.ac.york.student.audio.music.GameMusic;
  * It represents the background music for the game.
  */
 @Getter
-public class BackgroundMusic extends GameMusic implements Music {
+public class BackgroundMusic extends GameMusic {
 
     /**
      * Default constructor for the BackgroundMusic class.
