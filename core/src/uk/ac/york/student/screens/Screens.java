@@ -35,6 +35,8 @@ public final class Screens {
      */
     public static Class<PreferencesScreen> PREFERENCES;
 
+    public static Class<LeaderboardScreen> LEADERBOARD;
+
     /**
      * Holds the class reference to the {@link EndScreen}. This is used to dynamically load the {@link EndScreen} when needed.
      */
