@@ -50,7 +50,6 @@ public class EndScreen extends BaseScreen {
         Gdx.input.setInputProcessor(new InputAdapter() {
             @Override
             public boolean keyDown(int keycode) {
-                /*Checks if either the enter key or the escape key has been pressed, exits if so */
                 if (keycode == Input.Keys.ENTER) {
                     game.setScreen(Screens.MAIN_MENU, true);
                 } else if (keycode == Input.Keys.ESCAPE) {
