@@ -37,6 +37,7 @@ public class EndScreen extends BaseScreen {
         float happinessMax = metrics.getHappiness().getMaxTotal();
         float score = player.calculateScore(energyTotal, energyMax, studyLevelTotal, studyLevelMax, happinessTotal, happinessMax);
         String scoreString = String.valueOf(score);
+        // Display the score on the screen
         batch.begin();
         font.draw(processor.getBatch(), "Your score is " + scoreString, 500, 400);
         font.draw(processor.getBatch(), "Press Enter to return to the main menu", 500, 300);

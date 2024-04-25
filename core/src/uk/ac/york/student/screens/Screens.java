@@ -34,6 +34,9 @@ public final class Screens {
      * Holds the class reference to the {@link PreferencesScreen}. This is used to dynamically load the {@link PreferencesScreen} when needed.
      */
     public static Class<PreferencesScreen> PREFERENCES;
+    /** 
+     * Holds the class reference to the {@link LeaderboardScreen}. This is used to dynamically load the {@link LeaderboardScreen} when needed.
+    */
 
     public static Class<LeaderboardScreen> LEADERBOARD;
 
