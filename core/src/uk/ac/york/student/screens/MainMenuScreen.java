@@ -1,6 +1,7 @@
 package uk.ac.york.student.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -471,6 +472,15 @@ public class MainMenuScreen extends BaseScreen {
         // Update the stage's actors and draw the stage.
         processor.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
         processor.draw();
+
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+            Gdx.app.exit();
+            dispose();
+        } else if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+            fadeOut();
+            Wait.async(1500, TimeUnit.MILLISECONDS)
+                .thenRun(() -> Gdx.app.postRunnable(() -> game.setScreen(Screens.GAME)));
+        }
     }
 
     /**
