@@ -1,3 +1,11 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.test.config": {
+        "config": "junit",
+        "workingDirectory": "${ENG1PART2/core}",
+        "junit": {
+            "testNamePattern": "^.*Test$",
+            "testFilePattern": ".*/test/.*"
+        }
+    }
 }
