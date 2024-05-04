@@ -1,6 +1,7 @@
+
 package tests.src;
 import org.jetbrains.annotations.TestOnly;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class testOne {
     

@@ -1,7 +1,7 @@
 package uk.ac.york.student.tests;
 
 import org.jetbrains.annotations.TestOnly;
-import org.junit.*;
+import org.junit.jupiter.api.Test;
 
 public class testOne {
     
