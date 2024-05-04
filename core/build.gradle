@@ -2,6 +2,7 @@ sourceCompatibility = 11
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 sourceSets.main.java.srcDirs = [ "src/" ]
+sourceSets.test.java.srcDirs = [ "test/" ]
 
 eclipse.project.name = appName + "-core"
 
@@ -24,13 +25,4 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testCompileOnly 'org.junit.jupiter:junit-jupiter-api'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-}
-task.named('test', Test) {
-    useJUnitPlatform()
-
-    maxHeapSize = "1g"
-
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
 }
