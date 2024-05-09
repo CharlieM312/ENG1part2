@@ -24,7 +24,10 @@ public final class Screens {
      * Holds the class reference to the {@link LoadingScreen}. This is used to dynamically load the {@link LoadingScreen} when needed.
      */
     public static Class<LoadingScreen> LOADING;
-
+     /**
+     * Holds the class reference to the {@link AchievementScreen}. This is used to dynamically load the {@link AchievementScreen} when needed.
+     */
+    public static Class<AchievementsScreen> ACHIEVEMENTS;
     /**
      * Holds the class reference to the {@link GameScreen}. This is used to dynamically load the {@link GameScreen} when needed.
      */

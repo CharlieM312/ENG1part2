@@ -1,6 +1,6 @@
 package tests.src;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Assert.assertEquals;
 import org.junit.Test;
 import com.badlogic.Gdx.gdx;
 import org.junit.Test;

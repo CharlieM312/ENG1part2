@@ -285,6 +285,7 @@ public class MainMenuScreen extends BaseScreen {
         TextButton playButton = new TextButton("Let Ron Cooke", craftacularSkin);
         TextButton preferencesButton = new TextButton("Settings", craftacularSkin);
         TextButton exitButton = new TextButton("Exit", craftacularSkin);
+        TextButton achiTextButton = new TextButton("Achievements", craftacularSkin);
         Image cookeLogoImage = new Image(cookeLogo);
 
         // Add the buttons and the logo image to the table.
@@ -295,6 +296,9 @@ public class MainMenuScreen extends BaseScreen {
         table.add(preferencesButton).fillX().uniformX();
         table.row();
         table.add(exitButton).fillX().uniformX();
+        table.row().pad(10, 0, 10,0);
+        table.add(achiTextButton).fillX().uniformX();
+        
 
         // Add listeners to the buttons.
         // The exit button disposes the button click sound and exits the application after a delay of 400 milliseconds.
@@ -338,6 +342,7 @@ public class MainMenuScreen extends BaseScreen {
                 zoomAndMove(playButton, Direction.DOWN);
                 zoomAndMove(preferencesButton, Direction.DOWN);
                 zoomAndMove(exitButton, Direction.DOWN);
+                zoomAndMove(achiTextButton, Direction.DOWN);
                 zoomAndMove(cookeLogoImage, Direction.UP);
                 fadeOut();
                 Wait.async(1500, TimeUnit.MILLISECONDS)
@@ -361,6 +366,22 @@ public class MainMenuScreen extends BaseScreen {
                 game.transitionScreen(Screens.PREFERENCES);
             }
         });
+        achiTextButton.addListener(new ChangeListener() {
+            /**
+             * This method is triggered when a change event occurs on the actor, in this case, when the preferences button is clicked.
+             * It first plays the button click sound.
+             * Then, it transitions the screen to the preferences screen.
+             *
+             * @param event The {@link com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent} triggered by the actor. This is not used in the method.
+             * @param actor The actor that triggered the {@link com.badlogic.gdx.scenes.scene2d.utils.ChangeListener.ChangeEvent}. This is not used in the method.
+             */
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                SoundManager.getSounds().get(Sounds.BUTTON_CLICK).play();
+                game.transitionScreen(Screens.ACHIEVEMENTS);
+            }
+        });
+
 
         // Declare variables for width and height
         float width;
