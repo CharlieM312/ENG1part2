@@ -1,6 +1,7 @@
 package uk.ac.york.student.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -284,6 +285,7 @@ public class MainMenuScreen extends BaseScreen {
         // Create the buttons and the logo image for the main menu screen.
         TextButton playButton = new TextButton("Let Ron Cooke", craftacularSkin);
         TextButton preferencesButton = new TextButton("Settings", craftacularSkin);
+        TextButton leaderBoardButton = new TextButton("Leaderboard", craftacularSkin);
         TextButton exitButton = new TextButton("Exit", craftacularSkin);
         Image cookeLogoImage = new Image(cookeLogo);
 
@@ -294,6 +296,8 @@ public class MainMenuScreen extends BaseScreen {
         table.row().pad(10, 0, 10, 0);
         table.add(preferencesButton).fillX().uniformX();
         table.row();
+        table.add(leaderBoardButton).fillX().uniformX();
+        table.row().pad(10, 0, 10, 0);
         table.add(exitButton).fillX().uniformX();
 
         // Add listeners to the buttons.
@@ -337,11 +341,21 @@ public class MainMenuScreen extends BaseScreen {
                 SoundManager.getSounds().get(Sounds.BUTTON_CLICK).play();
                 zoomAndMove(playButton, Direction.DOWN);
                 zoomAndMove(preferencesButton, Direction.DOWN);
+                zoomAndMove(leaderBoardButton, Direction.DOWN);
+                zoomAndMove(exitButton, Direction.DOWN);
+                zoomAndMove(cookeLogoImage, Direction.UP);
+                fadeOut();
+                Wait.async(1500, TimeUnit.MILLISECONDS).thenRun(() -> Gdx.app.postRunnable(() -> game.setScreen(Screens.USER_CREATION)));
+                /*
+                SoundManager.getSounds().get(Sounds.BUTTON_CLICK).play();
+                zoomAndMove(playButton, Direction.DOWN);
+                zoomAndMove(preferencesButton, Direction.DOWN);
                 zoomAndMove(exitButton, Direction.DOWN);
                 zoomAndMove(cookeLogoImage, Direction.UP);
                 fadeOut();
                 Wait.async(1500, TimeUnit.MILLISECONDS)
                     .thenRun(() -> Gdx.app.postRunnable(() -> game.setScreen(Screens.GAME)));
+                */
             }
         });
 
@@ -359,6 +373,15 @@ public class MainMenuScreen extends BaseScreen {
             public void changed(ChangeEvent event, Actor actor) {
                 SoundManager.getSounds().get(Sounds.BUTTON_CLICK).play();
                 game.transitionScreen(Screens.PREFERENCES);
+            }
+        });
+
+        leaderBoardButton.addListener(new ChangeListener() {
+             
+            @Override
+            public void changed(ChangeEvent event, Actor actor) {
+                SoundManager.getSounds().get(Sounds.BUTTON_CLICK).play();
+                game.transitionScreen(Screens.LEADERBOARD);
             }
         });
 

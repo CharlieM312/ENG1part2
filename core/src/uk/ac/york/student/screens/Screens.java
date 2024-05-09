@@ -40,6 +40,10 @@ public final class Screens {
      */
     public static Class<EndScreen> END;
 
+    public static Class<LeaderBoardScreen> LEADERBOARD;
+
+    public static Class<UserCreationScreen> USER_CREATION;
+
     static {
         // Get all the fields of the Screens class
         Field[] fields = Screens.class.getFields();

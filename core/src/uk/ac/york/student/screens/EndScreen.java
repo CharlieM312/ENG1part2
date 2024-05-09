@@ -10,6 +10,7 @@ import uk.ac.york.student.player.PlayerMetric;
 import uk.ac.york.student.player.PlayerMetrics;
 
 import java.util.List;
+import uk.ac.york.student.ScoreFiles.ScoreFileManager;
 
 @Getter
 public class EndScreen extends BaseScreen {
@@ -34,15 +35,12 @@ public class EndScreen extends BaseScreen {
         float happinessMax = metrics.getHappiness().getMaxTotal();
 
         float score = player.calculateScore(energyTotal, energyMax, studyLevelTotal, studyLevelMax, happinessTotal, happinessMax);
-        System.out.println(score);
         String scoreString = player.convertScoreToString(score);
-        System.out.println(scoreString);
-
+        ScoreFileManager.AddCurrentGameToLeaderBoard(score, scoreString);
     }
 
     @Override
     public void show() {
-
     }
 
     @Override
